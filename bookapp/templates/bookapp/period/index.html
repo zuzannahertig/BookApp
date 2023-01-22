@@ -1,0 +1,28 @@
+{% extends 'bookapp/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="table">
+    {% if all_periods %}
+        <table>
+            <tbody>
+                {% for period in all_periods %}
+                    <tr>
+                        <td>{{ period.name }}</td>
+
+                        <td><a href="{% url 'epoki_szczegol' period.id %}" class="button2">Pokaż</a></td>
+                        <td><a href="{% url 'epoki_modyfikuj' period.id %}" class="button2">Zmień</a></td>
+                        <td><a href="{% url 'epoki_kasuj' period.id %}" class="button2">Usuń</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Brak epok</p>
+    {% endif %}
+    </div></div>
+    <p class="button">
+        <a href="{% url 'epoki_nowy' %}" class="button1">Dodaj epokę</a>
+    </p>
+{% endblock content %}
+    

@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<h1>Formularz</h1>
+<form action="{% url 'show' %}" method="post">
+    {% csrf_token %}
+    <label for="first_name">Wpisz imię: </label>
+    <input type="text" name="first_name" id="first_name"><br><br>
+    <label for="age">Podaj swój wiek: </label>
+    <input type="number" name="age" id="age">
+    <br><br>
+    <input type="submit" value="Wyślij">
+</form>
+{% endblock content%}

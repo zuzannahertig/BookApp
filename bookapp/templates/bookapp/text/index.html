@@ -1,0 +1,30 @@
+{% extends 'bookapp/base.html' %}
+{% block content %}
+<h2>Aby otrzymać wykres, przy wybranym tytule kliknij <div class="bold">WYGENERUJ WYKRES</div></h2>
+<div class="container">
+    <div class="table">
+    {% if all_texts %}
+        <table>
+            <tbody>
+                {% for text in all_texts %}
+                    <tr>
+                        <td class="titles">{{ text.title }}</td>
+                        <td><a href="{% url 'teksty_modyfikuj' text.id %}" class="button2">Zmień</a></td>
+                        <td><a href="{% url 'teksty_kasuj' text.id %}" class="button2">Usuń</a></td>
+                        <td><a href="{% url 'get_image' text.id %}" class="button2">Wygeneruj wykres</a></td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        
+    {% else %}
+        <p>Brak tekstów</p>
+    {% endif %}
+</div></div>
+
+    <p class="button">
+        <a href="{% url 'teksty_nowy' %}" class="button1">Dodaj tekst</a>
+    </p>
+{% endblock content %}
+     

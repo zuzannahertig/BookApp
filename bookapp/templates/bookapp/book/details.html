@@ -1,0 +1,19 @@
+{% extends 'bookapp/base.html' %}
+
+{% block content %}
+{% if book %}
+
+<h1>{{ book.title }}</h1>
+<p class="text">{{ book.author }}</p>
+<p class="text">{{ book.period }}</p>
+<div class="container">
+        {% load static %}
+        <img src="{% static book.get_name %}" class="image">
+
+    {% endif %}
+    </ul>
+</div>
+<p class="button">
+<a href="{% url 'ksiazki' %}" class="button1">Wróć</a></p>
+
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'bookapp/base.html' %}
+
+{% block action %}
+    {{ action }}
+{% endblock action%}
+
+{% block content %}
+    {% if text %}
+        <h3>{{ text.title }}</h3>
+        <p>{{ text.file }}</p>
+
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Strona{% endblock %}</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="page_container">
+    <div class="content-wrap">
+    <div class="logo">
+        <h1>BookApp</h1>
+    </div>
+    <nav>
+        <div class="navbar">
+            <div class="nav-container">
+                <input class="checkbox" type="checkbox" name="" id=""/>
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+               <div class="menu-items">
+        <li><a href="{% url 'projekt' %}">O projekcie</a></li>
+        <li><a href="{% url 'teksty_nowy' %}">Rozpocznij</a></li>
+        <li><a href="{% url 'ksiazki' %}">Książki</a></li>
+        <li><a href="{% url 'autorzy' %}">Autorzy</a></li>
+        <li><a href="{% url 'epoki' %}">Epoki</a></li>
+        <li><a href="{% url 'teksty' %}">Teksty</a></li>
+    </div> </div></div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+</div>
+<div class="footer-container"> 
+    <p class="footer"> © Zuzanna Hertig</p>
+</div>
+</div>
+</body>
+</html>

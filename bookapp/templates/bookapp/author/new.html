@@ -1,0 +1,21 @@
+{% extends 'bookapp/base.html' %}
+
+{% block content %}
+<div class="container">
+<form action="{% url 'autorzy_nowy' %}" method="post">
+    {% csrf_token %}
+    <table class="table--no-borders">
+        {% for field in form %}
+            <tr>
+                <td>{{ field.label }}</td>
+                <td>{{ field }}</td>
+                <td>{{ field.errors.as_text }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="Dodaj">
+</form>
+</div>
+<p class="button">
+    <a href="{% url 'autorzy' %}" class="button1">Wróć</a></p>
+{% endblock content %}

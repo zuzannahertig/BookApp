@@ -1,0 +1,29 @@
+{% extends 'bookapp/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="table">
+    {% if all_authors %}
+        <table>
+            <tbody>
+                {% for author in all_authors %}
+                    <tr>
+                        <td>{{ author.name }} {{ author.surname }}</td>
+                        <td><a href="{% url 'autorzy_szczegol' author.id %}" class="button2">Pokaż</a></td>
+                        <td><a href="{% url 'autorzy_modyfikuj' author.id %}" class="button2">Zmień</a></td>
+                        <td><a href="{% url 'autorzy_kasuj' author.id %}" class="button2">Usuń</a></td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    {% else %}
+        <p>Brak autorów</p>
+    {% endif %}
+    </div></div>
+
+    <p class="button">
+        <a href="{% url 'autorzy_nowy' %}" class="button1">Dodaj nowego autora</a>
+    </p>
+{% endblock content %}
+    

@@ -1,0 +1,27 @@
+{% extends 'bookapp/base.html' %}
+{% block content %}
+<div class="container">
+<div class="table">
+    {% if all_books %}
+        <table>
+            <tbody>
+                {% for book in all_books %}
+                    <tr>
+                        <td>{{ book.title }}</td>
+                        <td><a href="{% url 'ksiazki_szczegol' book.id %}" class="button2">Pokaż</a></td>
+                        <td><a href="{% url 'ksiazki_modyfikuj' book.id %}" class="button2">Zmień</a></td>
+                        <td><a href="{% url 'ksiazki_kasuj' book.id %}" class="button2">Usuń</a></td>
+                        <td><a href="{% url 'predictions' book.id %}" class="button2">Znajdź 5 podobnych</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Brak książek</p>
+    {% endif %}
+    </div></div>
+    <p class="button">
+        <a href="{% url 'ksiazki_nowy' %}" class="button1">Dodaj nową książkę</a>
+    </p>
+{% endblock content %}
+     

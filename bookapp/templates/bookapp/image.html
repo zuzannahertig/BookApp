@@ -1,0 +1,9 @@
+{% extends 'bookapp/base.html' %}
+{% block content %}
+<h1>Wykres dla tytułu: {{ title }}</h1>
+<p class="paragraph">Aby dodać tytuł do bazy książek, pobierz obraz i <a href="http://127.0.0.1:8000/bookapp/ksiazki/new" class="link">dodaj książkę</a>.</p>
+<div class="container">
+<p><img src="data:image/png;base64,{{ image }}" class="image"></p></div>
+<p class="button">
+<a href="data:image/png;base64,{{ image }}" download="wykres" class="button1">Pobierz</a></p>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'bookapp/base.html' %}
+
+{% block content %}
+<h1>Dodaj swój plik .txt, by wygenerować z niego wykres.</h1>
+<div class="container">
+
+<form action="{% url 'teksty_nowy' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <table class="table--no-borders">
+        {% for field in form %}
+            <tr>
+                <td>{{ field.label }}</td>
+                <td>{{ field }}</td>
+                <td>{{ field.errors.as_text }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <p>
+        <input type="submit" value="Dodaj" /> 
+    </p>
+
+</form>
+</div>
+{% endblock %}

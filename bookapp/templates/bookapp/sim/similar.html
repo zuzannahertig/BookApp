@@ -1,0 +1,13 @@
+{% extends 'bookapp/base.html' %}
+{% block content %}
+<h2>Znaleziono poniższe podobne do książki <i> {{ title }} </i> fabuły:</h2>
+
+{% for i in static_paths %}
+<p class="text1">{{ i|slice:"8:-4" }}</p>
+{% load static %}
+<p class="image_container"><img src= "{% static i %}" class="image"></p>
+
+{% endfor %}
+<p class="button">
+    <a href="{% url 'ksiazki' %}" class="button1">Wróć</a></p>
+{% endblock %}

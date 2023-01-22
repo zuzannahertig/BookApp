@@ -1,0 +1,13 @@
+h1 {color:#6b1804}
+body {
+    background-color: hsl(198, 59%, 64%);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #2d3436;
+    text-align: center;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); */
+
+}

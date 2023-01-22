@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container">
+<p>Słynny amerykański pisarz Kurt Vonnegut stwierdził kiedyś, że każdą opowieść można przedstawić w formie wykresu, jeśli oś y rozpiąć pomiędzy wartościami powodzenie–niepowodzenie, a oś x – między początkiem a końcem historii. Postawił ponadto tezę, że istnieje określona liczba typów historii. Fragment jego wystąpienia, dostępny w internecie, zainspirował badaczy, by podjąć próbę przedstawienia opowieści w taki właśnie sposób.  </p>
+{% load static %}
+
+<img src="{% static 'kv.png' %}" class="image">
+</div>
+{% endblock content %}
